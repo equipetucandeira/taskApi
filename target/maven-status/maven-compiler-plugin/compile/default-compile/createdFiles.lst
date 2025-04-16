@@ -1,0 +1,5 @@
+com/ifsp/task/model/PriorityType.class
+com/ifsp/task/TaskApplication.class
+com/ifsp/task/model/Task.class
+com/ifsp/task/repository/TaskRepository.class
+com/ifsp/task/dto/TaskRequestDTO.class

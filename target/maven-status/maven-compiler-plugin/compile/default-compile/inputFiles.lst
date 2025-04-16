@@ -1,0 +1,7 @@
+/home/tmribeiro/Documentos/ifsp-2025/GRUAPIM/taskApi/src/main/java/com/ifsp/task/TaskApplication.java
+/home/tmribeiro/Documentos/ifsp-2025/GRUAPIM/taskApi/src/main/java/com/ifsp/task/config/MapperConfig.java
+/home/tmribeiro/Documentos/ifsp-2025/GRUAPIM/taskApi/src/main/java/com/ifsp/task/dto/TaskRequestDTO.java
+/home/tmribeiro/Documentos/ifsp-2025/GRUAPIM/taskApi/src/main/java/com/ifsp/task/dto/TaskResponseDTO.java
+/home/tmribeiro/Documentos/ifsp-2025/GRUAPIM/taskApi/src/main/java/com/ifsp/task/model/PriorityType.java
+/home/tmribeiro/Documentos/ifsp-2025/GRUAPIM/taskApi/src/main/java/com/ifsp/task/model/Task.java
+/home/tmribeiro/Documentos/ifsp-2025/GRUAPIM/taskApi/src/main/java/com/ifsp/task/repository/TaskRepository.java

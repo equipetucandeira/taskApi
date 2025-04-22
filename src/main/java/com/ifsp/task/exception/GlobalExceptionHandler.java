@@ -35,4 +35,12 @@ public class GlobalExceptionHandler {
         error.put("erro", "Internal server error: " + ex.getMessage());
         return error;
     }
+    
+    @ExceptionHandler(IllegalStateException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public Map<String, String> handleConflict(IllegalStateException ex) {
+        Map<String, String> error = new HashMap<>();
+        error.put("erro", ex.getMessage());
+        return error;
+    }
 }

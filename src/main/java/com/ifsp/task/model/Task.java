@@ -33,7 +33,7 @@ public class Task {
   }
 
   public Task(String title, String description, PriorityType priorityType, Date limitDate,
-      String category, Date createdAt) {
+      String category) {
     this.title = title;
     this.description = description;
     this.priority = priorityType;

@@ -2,6 +2,7 @@ package com.ifsp.task.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.ifsp.task.model.PriorityType;
+import com.ifsp.task.model.Task;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -25,8 +26,12 @@ public class TaskRequestDTO {
 
   @JsonFormat(pattern = "yyyy-MM-dd")
   private Date limitDate;
-  private boolean isComplete;
-
+  //private boolean isComplete;
+  private String category;
   @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
   private LocalDateTime createdAt;
+  
+  public Task transformToObject() {
+	  return new Task(title, description, priority, limitDate, category);
+  }
 }

@@ -28,8 +28,8 @@ public class TaskRequestDTO {
   private Date limitDate;
   //private boolean isComplete;
   private String category;
-  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
-  private LocalDateTime createdAt;
+//  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+//  private LocalDateTime createdAt;
   
   public Task transformToObject() {
 	  return new Task(title, description, priority, limitDate, category);

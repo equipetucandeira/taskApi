@@ -1,6 +1,5 @@
 package com.ifsp.task.controller;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ifsp.task.dto.TaskRequestDTO;
 import com.ifsp.task.dto.TaskResponseDTO;
+import com.ifsp.task.exception.ResourceNotFoundException;
 import com.ifsp.task.model.Task;
 import com.ifsp.task.repository.TaskRepository;
 
@@ -34,15 +34,11 @@ public class TaskController{
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<TaskResponseDTO> getTaskById(@PathVariable Long id){
-		Optional<Task> optTask = taskRepository.findById(id);
-		if(optTask.isPresent()) {
-			TaskResponseDTO response = new TaskResponseDTO(optTask.get());
-			return ResponseEntity.ok(response);
-		}else {
-			//erro 404
-			return ResponseEntity.notFound().build();
-		}
+	    return taskRepository.findById(id)
+	        .map(task -> ResponseEntity.ok(new TaskResponseDTO(task)))
+	        .orElseThrow(() -> new ResourceNotFoundException("Task not found with id: " + id));
 	}
+
 	
 	@PostMapping
     public ResponseEntity<TaskResponseDTO> createTask(@RequestBody TaskRequestDTO dto) {

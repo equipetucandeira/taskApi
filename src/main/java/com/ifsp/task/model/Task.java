@@ -26,6 +26,7 @@ public class Task {
   private PriorityType priority;
   private Date limitDate;
   private boolean isComplete;
+  @NotBlank(message = "Category is required")
   private String category;
   @CreationTimestamp
   private LocalDateTime createdAt;

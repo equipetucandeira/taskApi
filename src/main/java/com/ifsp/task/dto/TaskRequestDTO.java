@@ -27,6 +27,7 @@ public class TaskRequestDTO {
   @JsonFormat(pattern = "yyyy-MM-dd")
   private Date limitDate;
   //private boolean isComplete;
+  @NotBlank(message = "Category is required")
   private String category;
 //  @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
 //  private LocalDateTime createdAt;

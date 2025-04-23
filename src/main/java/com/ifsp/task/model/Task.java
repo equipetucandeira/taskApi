@@ -1,5 +1,6 @@
 package com.ifsp.task.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -13,10 +14,10 @@ import java.util.Date;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import com.ifsp.task.model.PriorityType;
-
 
 @Entity
 public class Task {
@@ -30,18 +31,19 @@ public class Task {
   @Enumerated(EnumType.STRING)
   @NotNull(message = "Priority is required")
   private PriorityType priority;
-  private Date limitDate;
+  @Column(nullable = false)
+  private LocalDate limitDate;
   private boolean isComplete;
   @NotBlank(message = "Category is required")
   private String category;
   @CreationTimestamp
-  private LocalDateTime createdAt;
-
+  @Column(updatable = false)
+  private LocalDate createdAt;
 
   public Task() {
   }
 
-  public Task(String title, String description, PriorityType priorityType, Date limitDate,
+  public Task(String title, String description, PriorityType priorityType, LocalDate limitDate,
       String category) {
     this.title = title;
     this.description = description;
@@ -84,11 +86,11 @@ public class Task {
     this.priority = priority;
   }
 
-  public Date getLimitDate() {
+  public LocalDate getLimitDate() {
     return limitDate;
   }
 
-  public void setLimitDate(Date limitDate) {
+  public void setLimitDate(LocalDate limitDate) {
     this.limitDate = limitDate;
   }
 
@@ -108,11 +110,11 @@ public class Task {
     this.category = category;
   }
 
-  public LocalDateTime getCreatedAt() {
+  public LocalDate getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(LocalDateTime createdAt) {
+  public void setCreatedAt(LocalDate createdAt) {
     this.createdAt = createdAt;
   }
 

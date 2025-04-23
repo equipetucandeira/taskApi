@@ -1,1 +1,3 @@
-com\ifsp\task\TaskApplicationTests.class
+com/ifsp/task/controller/TaskControllerTest.class
+com/ifsp/task/TaskApplicationTests.class
+com/ifsp/task/service/TaskServiceTest.class

@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -24,7 +25,7 @@ public class TaskRequestDTO {
   private PriorityType priority;
 
   @JsonFormat(pattern = "yyyy-MM-dd")
-  private Date limitDate;
+  private LocalDate limitDate;
   //private boolean isComplete;
   @NotBlank(message = "Category is required")
   private String category;

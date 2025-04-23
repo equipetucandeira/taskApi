@@ -1,6 +1,7 @@
 package com.ifsp.task.dto;
 
 import java.util.Date;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import com.ifsp.task.model.PriorityType;
@@ -19,10 +20,10 @@ public class TaskResponseDTO {
   private String title;
   private String description;
   private PriorityType priority;
-  private Date limitDate;
+  private LocalDate limitDate;
   private boolean isComplete;
   private String category;
-  private LocalDateTime createdAt;
+  private LocalDate createdAt;
 
   
   public TaskResponseDTO(Task task) {

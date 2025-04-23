@@ -84,8 +84,8 @@ public class TaskControllerTest {
     Task task2 = new Task("Tirar o lixo 2", "Precisa retirar o lixo do banheiro",
         PriorityType.LOW,
         LocalDate.now().plusDays(1), "Daily");
-    task1.setId(2L);
-    task1.setCreatedAt(LocalDate.now());
+    task2.setId(2L);
+    task2.setCreatedAt(LocalDate.now());
     TaskResponseDTO dto2 = new TaskResponseDTO(task2);
 
     Page<TaskResponseDTO> page = new PageImpl<>(List.of(dto1, dto2), PageRequest.of(0, 2), 2);

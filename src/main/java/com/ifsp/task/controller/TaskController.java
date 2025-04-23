@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import jakarta.validation.Valid;
 
 import com.ifsp.task.dto.TaskRequestDTO;
 import com.ifsp.task.dto.TaskResponseDTO;
@@ -50,7 +51,7 @@ public class TaskController {
 	}
 
 	@PostMapping
-	public ResponseEntity<TaskResponseDTO> createTask(@RequestBody TaskRequestDTO dto) {
+	public ResponseEntity<TaskResponseDTO> createTask(@RequestBody @Valid TaskRequestDTO dto) {
 		return ResponseEntity.ok(taskService.createTask(dto));
 	}
 
@@ -66,7 +67,7 @@ public class TaskController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<TaskResponseDTO> updateTask(@PathVariable Long id, @RequestBody TaskRequestDTO dto) {
+	public ResponseEntity<TaskResponseDTO> updateTask(@PathVariable Long id, @RequestBody @Valid TaskRequestDTO dto) {
 		return ResponseEntity.ok(taskService.updateTask(id, dto));
 	}
 
